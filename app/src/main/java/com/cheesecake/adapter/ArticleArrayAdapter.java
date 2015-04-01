@@ -10,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cheesecake.pojo.ArticlePojo;
+import com.cheesecake.util.ImageUtil;
 
-import cheesecake.com.cheesecakelabs.R;
+import cheesecake.com.com.cheesecake.activity.R;
+
 
 /**
  * Created by Ricardo Freire on 3/29/15.
@@ -42,14 +44,9 @@ public class ArticleArrayAdapter extends ArrayAdapter<ArticlePojo> {
         title.setText(article.getTitle());
         authors.setText(article.getAuthors());
         date.setText(article.getDate());
-        image.setImageResource(getImageResource(article.getWebsite()));
+        image.setImageResource(ImageUtil.getImageResouce(context, article.getWebsite()));
 
         return rowView;
     }
 
-    private int getImageResource(String website) {
-        String imageName = website.replaceAll("[\\s\\-]", "").toLowerCase().trim();
-        Log.i("(BOSTA)",imageName);
-        return context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
-    }
 }

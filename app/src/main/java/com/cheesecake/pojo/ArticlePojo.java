@@ -1,12 +1,14 @@
 package com.cheesecake.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Ricardo Freire on 3/29/15.
  *
  * POJO that represents the Article read from the JSON.
  *
  */
-public class ArticlePojo {
+public class ArticlePojo implements Serializable {
 
     private String title;
     private String content;
